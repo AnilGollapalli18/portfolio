@@ -11,7 +11,7 @@ const Home = () => {
     return (
         <div className='home' id='home'>
             <div className='home-content'>
-            <p className='home-greet'>{greeting.current}</p>
+            <p className='home-greet'>{greeting.current} <box-icon name='happy-alt'></box-icon></p>
             <p className='home-name'>{name.current}</p>
             <p className='home-intro'>{intro.current}</p>
  
@@ -21,8 +21,11 @@ const Home = () => {
             <box-icon type="logo" name="twitter"></box-icon>
             <box-icon type="logo" name="youtube"></box-icon>
             <box-icon type="logo" name="linkedin"></box-icon>
-
             </div>
+             
+               <div style={{position:'relative',top:'50px'}}>
+                 <a href='https://drive.google.com/file/d/14-_L2C37fp8UI4KR2cTfP6muwms83NHF/view?usp=drivesdk'><box-icon type='solid' name='file-pdf'></box-icon></a>
+               </div>
 
             </div>
             <div>

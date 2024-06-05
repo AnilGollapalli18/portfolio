@@ -7,6 +7,7 @@ import Nav from './Mainfile/Nav';
 import Projects from './Mainfile/Projects';
 import { useMemo, useState } from 'react';
 
+
 const App = () => {
 
   //USEMEMO USED FOR CREATE A COLOR CAHNGE
@@ -32,6 +33,7 @@ const App = () => {
       <Skills/>
       <Projects/>
       <Contact/>
+    
     </div>
   );
 };
