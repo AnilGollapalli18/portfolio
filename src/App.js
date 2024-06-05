@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import About from './Mainfile/About';
+import Contact from './Mainfile/Contact';
+import Home from './Mainfile/Home';
+import Skills from './Mainfile/Skills';
+import Nav from './Mainfile/Nav';
+import Projects from './Mainfile/Projects';
+import { useMemo, useState } from 'react';
 
-function App() {
+const App = () => {
+
+  //USEMEMO USED FOR CREATE A COLOR CAHNGE
+  const[dark,setDark] = useState(false)
+
+  const changetheme = useMemo(() => {
+    return{
+      background : dark ? "#DCCFED" : "#FFFF" ,
+      color : dark ? "#291C3A" : "#331C52"
+    }
+  },[dark])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app' style={changetheme}>
+    <Nav/>
+      <label>
+              <input type='checkbox' onClick={()=> setDark(!dark)} />
+              <span className='slider round'></span>
+      </label>
+      
+      <Home/>
+      <About/>
+      <Skills/>
+      <Projects/>
+      <Contact/>
     </div>
   );
-}
+};
 
 export default App;
