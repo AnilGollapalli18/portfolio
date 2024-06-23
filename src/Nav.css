@@ -6,8 +6,8 @@
     list-style: none;
     scroll-behavior: smooth;
 }
-.navbar{
-    position: fixed;
+header{
+    position:fixed;
     top: 0;
     right: 0;
     z-index: 1000;
@@ -16,30 +16,34 @@
     align-items: center;
     justify-content: space-between;
     background: transparent;
-    padding: 20px 20%;
-    transition: ease .40s;
+    transition: ease .40s
 }
 .logo{
     font-size: 35px;
     font-weight:600;
     letter-spacing: 2px;
-    color:var(--bg-color);
+    color: #fff;
+}
+header.sticky{
+    background: rgb(2, 50, 70);
+    padding: 10px 5%;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
 }
 .navbar{
     display: flex;
 }
 .navbar a {
-    color: black;
+    color: #fff;
     font-size: 20px;
     font-weight: 100px;
-    padding: 10px 22px;
+    padding: 5px 65px;
     border-radius: 4px;
     transition: ease .40s;
 }
 .navbar a:hover{
     background-color: #fff;
-    color: black;
-    box-shadow: 10px 20px 30px rgb(85 85 85 / 20%);
+    color: rgb(9, 238, 9);
+    box-shadow: 10px 15px 20px rgb(85 85 85 / 20%);
 
 }
 .home{
@@ -80,16 +84,18 @@
 }
 
 .home-image{
-    width:440px; 
-    height:480px; 
+    width:400px; 
+    height:400px; 
     border-radius: 15px 45px;
 }
+
+
 .about{
     position: relative;
     width: 100%;
     height: 100vh;
     text-align: center;
-    padding: 90px 10%;
+    padding: 70px 8%;
     background-color: blanchedalmond;
 }
 .about h1{
@@ -108,7 +114,8 @@
     padding: 90px 10%;
     transition: ease .40s;
     text-align: center;
-    background-color: cadetblue;
+    color: rgb(17, 16, 16);
+    background-color: rgb(139, 212, 214);
 }
 .skills h2{
     font-size: 40px;
@@ -146,7 +153,7 @@
     position: relative;
     width: 100%;
     height: 100vh;
-    padding: 110px 5%;
+    padding: 100px 5%;
     transition: ease .40s;
     text-align: center;
 }
@@ -178,48 +185,133 @@
     position: relative;
     width: 100%;
     height: 100vh;
-    padding: 110px 35%;
+    padding: 90px 36%;
     transition: ease .40s;
     text-align: center;
-    background-color: rgb(166, 202, 238);
-
+    background: linear-gradient(165deg, rgb(2, 2, 165), black );
+    color: #fff;
 }
 .contact h2{
     font-size: 40px;
     font-weight: 400px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 .contact-container{
-    border: 1px solid;
     border-radius: 10px;
-    width: 500px;
-    height: 400px;
-    background-color: rgb(157, 248, 248);
-}
-.contact input{
-    width: 300px;
-    height: 30px;
-    margin-top: 50px;
-    border-radius: 10px;
-    cursor: auto;
-    border: none;
-    padding: 15px;
-}
-.contact input:focus{
-    outline: none;
-}
-.contact label{
     font-size: 20px;
-    font-weight: 300px;
-    position: relative;
-    right: 10px;
+    text-align: left;
 }
-.contact button{
-    width: 300px;
-    height: 30px;
-    margin-top: 30px;
-    background-color: rgb(36, 36, 245);
-    color: #fff;
-    border: none;
-    border-radius: 10px;
+.contact strong{
+    font-weight: 800;
+}
+.contact b{
+    display: grid;
+    margin-left: 100px;
+    position: relative;
+    bottom: 25px;
+    left: 25px;
+}
+.contact span{
+    margin-left: 180px;
+    font-weight: 600;
+    display: grid;
+    position: relative;
+    bottom: 47px;
+    left: 50px;
+}
+
+
+@media (max-width: 767px) {
+    .navbar {
+        gap: 10px;
+     }
+ 
+     .navbar a {
+         padding: 5px 20%;
+     }
+ 
+     .home {
+         padding: 80px 2%;
+         width: 100%;
+         display: grid;
+     }
+ 
+     .home p {
+         margin-top: -25px;
+     }
+     .home-drive{
+         margin-top: -40px;
+     }
+     .home-image {
+         margin-top: 50px;
+     }
+ 
+     .home-name {
+         font-size: 30px;
+     }
+ 
+     .home-intro {
+         font-size: 18px;
+     }
+    .skill-list {
+        flex-direction: row;
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    .skill-f {
+        margin: 20px 20px;
+    }
+
+    .project-button{
+        margin-top: -20px;
+    }
+    .link-image{
+         padding: 10px;
+         width: 150px;
+         height: 100px;
+         display: grid;
+         
+     }
+    .link-name {
+        right: 0;
+        display: flex;
+    }
+
+    .contact {
+        padding: 80px 5%;
+    }
+
+    .contact-container {
+        padding: 10px;
+    }
+
+    .contact input {
+        margin-top: 10px;
+    }
+    .about-content{
+        margin-top: -60px;
+        font-size: 17px;
+    }
+    .about-list{
+        margin-top: -14px;
+        text-align: left;
+        padding: 0 ;
+    }
+}
+@media (min-width: 768px) {
+    .home {
+        flex-direction:row;
+        justify-content: space-between;
+    }
+
+    .home-content {
+        width: 50%;
+        text-align: left;
+    }
+
+    .home-image {
+        margin-top: 50px;
+    }
+  
 }

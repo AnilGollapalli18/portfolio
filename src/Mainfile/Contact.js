@@ -3,70 +3,27 @@ import React, { useState } from 'react';
 
 const Contact = () => {
 
-  const [formdata,setFormdata] = useState({
-    name:'',
-    email:'',
-    message:'',
+  const [address] = useState({
+    name:'Anil Gollapalli',
+    email:'gollapallianil005@gmail.com',
+    street : 'Padmashali TownShip',
+    city:'Ecil , Kapra',
+    landmark:'Oak valley School',
+    state:'Telangana',
+    zip:'500083'
   });
-
-  const handlechange = (e) => {
-    const {name,value} = e.target
-
-    setFormdata({...formdata,[name] : value})
-  }
-
-  const handlesubmit = (e) => {
-    e.preventdefault()
-console.log(formdata)
-
-
-setFormdata({
-  name:'',
-  email:'',
-  message:''
-})
-}
+   
     return (
         <div className='contact' id='contact'>
               <h2>Contact Me</h2>
             <div className="contact-container">
-              <form className='form-group'> 
-                 <div className='form-in'>
-                   <label htmlFor='name' >Name :</label>
-                   <input 
-                   type='text'
-                   id='name'
-                   name='name'
-                   value={formdata.name}
-                   onChange={handlechange}
-                   required
-                   />
-                  <div className='form-group'>
-                    <label htmlFor='email'>Email :</label>
-                   <input 
-                   type='text'
-                   id='email'
-                   name='email'
-                   value={formdata.email}
-                   onChange={handlechange}
-                   required
-                   />
-                   </div>
-
-                   <div className='form-group'>
-                    <label htmlFor='message'>Message :</label>
-                    <input
-                    type='text'
-                    id='message'
-                    name='message'
-                    value={formdata.message}
-                    onChange={handlechange}
-                    required
-                    />
-                   </div>
-                   <button onSubmit={handlesubmit}>SUBMIT</button>
-                 </div>
-              </form>
+                <p><strong>Name </strong> <b>:</b><span>{address.name}</span></p>
+                <p><strong>Email </strong> <b>:</b><span>{address.email}</span></p>
+                <p><strong>Street </strong><b>:</b><span>{address.street}</span></p>
+                <p><strong>City </strong><b>:</b><span>{address.city}</span></p>
+                <p><strong>Landmark</strong><b>:</b><span>{address.landmark}</span></p>
+                <p><strong>State </strong><b>:</b><span>{address.state}</span></p>
+                <p><strong>Zip </strong><b>:</b><span>{address.zip}</span></p>
             </div>
         </div>
     );
